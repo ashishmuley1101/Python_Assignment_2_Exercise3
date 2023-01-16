@@ -5,24 +5,28 @@
 # UC 3. Write a Python class named Student with two instances student1, student2 and assign given values to the said instances attributes. Print all the attributes of student1, student2 instances with their values in the given forma
 
 
-
-# UC 2. Student class display its type. Also, display the __dict__ attribute keys and the value of the __module__ attribute of the Student class.
+# UC 3. Write a Python class named Student with two instances student1, student2 and assign given values to the said instances attributes. Print all the attributes of student1, student2 instances with their values in the given forma
 class Student:
 
-    pass      # Pass keyword passing the body if we don't write any code inside class
+    name = ""
+    age  = 0
+    section = ""
 
-print(type(Student))  # type() method display its <class 'type'>
+    def __init__(self, name, age, section):
+        self.name = name
+        self.age = age
+        self.section = section
 
-# A special attribute of every module is __dict__.
-# This is the dictionary containing the module’s symbol table.
-# The function __dict__.keys() returns a dictionary view object with the dictionary's list of keys.
-print(Student.__dict__.keys())
+    def display(self):
+        print("Student Name :", self.name)
+        print("Student age :", self.age)
+        print("Student section :", self.section)
 
-# This built-in class attribute when called prints
-# the name of the module the function/object was defined in, or None if unavailable
-print(Student.__module__)  # default print __main__ in python
+# Two instances student1, student2 and assign given values to the said instances attributes.
+student1 = Student("Jack", 16, 'A')
+student2 = Student("Krack", 15, 'B')
 
-# Output :
-# <class 'type'>
-# dict_keys(['__module__', '__dict__', '__weakref__', '__doc__'])
-# __main__
+# Printing all the attributes of student1, student2 instances with their values.
+student1.display()
+print("\n")
+student2.display()
