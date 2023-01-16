@@ -5,13 +5,24 @@
 # UC 3. Write a Python class named Student with two instances student1, student2 and assign given values to the said instances attributes. Print all the attributes of student1, student2 instances with their values in the given forma
 
 
-# UC 1. Function student(). Using function attributes display the names of all arguments.
-def student(name, age, section):
 
-    print("\nStudent Name : ", name, "\nStudent Age : ", age, "\nStudent Section : ", section)
+# UC 2. Student class display its type. Also, display the __dict__ attribute keys and the value of the __module__ attribute of the Student class.
+class Student:
 
-student_name = input("Enter Student Name : ")
-student_age = input("Enter Student Age : ")
-student_section = input("Enter Student Section : ")
+    pass      # Pass keyword passing the body if we don't write any code inside class
 
-student(student_name, student_age, student_section)
+print(type(Student))  # type() method display its <class 'type'>
+
+# A special attribute of every module is __dict__.
+# This is the dictionary containing the module’s symbol table.
+# The function __dict__.keys() returns a dictionary view object with the dictionary's list of keys.
+print(Student.__dict__.keys())
+
+# This built-in class attribute when called prints
+# the name of the module the function/object was defined in, or None if unavailable
+print(Student.__module__)  # default print __main__ in python
+
+# Output :
+# <class 'type'>
+# dict_keys(['__module__', '__dict__', '__weakref__', '__doc__'])
+# __main__
